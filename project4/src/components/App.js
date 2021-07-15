@@ -3,7 +3,8 @@ import SearchBar from './searchBar'
 import youTube from '../api/youTube'
 import VideoList from './videoList'
 import VideoDetail from './videoDetail'
-import VideoItem from './videoItem'
+
+
 class App extends React.Component  {
     
     state = {
@@ -64,5 +65,6 @@ class App extends React.Component  {
 }
  
 export default App
+
 
 
