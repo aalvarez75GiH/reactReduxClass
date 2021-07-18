@@ -6,43 +6,41 @@ import axios from 'axios'
 
 const Search = () => {
 
-    const [ term, setTerm ] = useState('')
+    const [ term, setTerm ] = useState('IBM')
+    const [debouncedTerm, setDebouncedTerm] = useState(term)
     const [results, setResults] = useState([])
-    // const [testID, setTestID] = useState(null)
-    // const [urlTest,setUrlTest] = useState('')
     
     
-    useEffect(() => {
+    useEffect(()=> {
+        const timerID = setTimeout(()=>{
+            setDebouncedTerm(term)
+            console.log(debouncedTerm)
+        },500)
+        return ()=>{
+            clearTimeout(timerID)
+        }
+    },[term])
+
+    
+    useEffect(()=> {
         const searchOnWiki = async () => {
-            
             const data = await axios.get('https://en.wikipedia.org/w/api.php?', {
             params: {
                 action: 'query',
                 list:'search',
                 origin: '*',
                 format:'json',
-                srsearch: term,
-            }
+                srsearch: debouncedTerm,
+            }                      
         })
         setResults(data.data.query.search)
         console.log(results)
-    } 
-        
-    setTimeout(()=>{
-        if (term) {
+    }
+        if (debouncedTerm){
             searchOnWiki()
         }
-    },500)
-    },[term])
+    },[debouncedTerm])
 
-    // const handleOnClick = (e, pageid)=> {
-    //     e.preventDefault()
-    //     console.log('you made me clicked...' + pageid )
-    //     setTestID(pageid)
-    //     setUrlTest(`https://en.wikipedia.org?curid=${testID}`)
-         
-    // }
-    
     const renderingList  = results.map((item) => {
         return (
             <div key={item.pageid} className="item">
@@ -83,3 +81,5 @@ const Search = () => {
 }
 
 export default Search
+
+
