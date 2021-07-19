@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 
-const DropDown = (props) => {
+const DropDown = ({ options, selected, onChangeSelected }) => {
     
     const [ active, setActive ] = useState(false)
     const ref = useRef()
@@ -27,7 +27,7 @@ const DropDown = (props) => {
 
     }, [])
 
-    const renderingOptions = props.options.map((x)=> {
+    const renderingOptions = options.map((x)=> {
         // if (x.value === selected.value){
         //     return null
         // }
@@ -35,7 +35,7 @@ const DropDown = (props) => {
             <div 
                 key={x.id} 
                 className="item"
-                onClick={()=> props.onChangeSelected(x)}
+                onClick={()=> onChangeSelected(x)}
             >
                 {x.label}
             </div>
@@ -53,7 +53,7 @@ const DropDown = (props) => {
                 className={`ui selection dropdown ${ active ? 'visible active' : ''}`}
             >
                 <i className="dropdown icon"></i>
-                <div className="text">{props.selected.label}</div>
+                <div className="text">{selected.label}</div>
                 <div className={`menu ${active ? 'visible transition' : ''}`}>
                     {renderingOptions}
                 </div>
@@ -61,7 +61,7 @@ const DropDown = (props) => {
             </div>
         </div>
         <div>
-            <h1 style={{color:`${props.selected.value}`}}>
+            <h1 style={{color:`${selected.value}`}}>
                     this is the color
             </h1>
             
