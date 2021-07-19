@@ -39,20 +39,21 @@ const options = [
 const App = () =>  {
  
     const [selected, setSelected] = useState(options[0])
-    console.log(selected)
+    const [showDropDown,setShowDropDown] = useState(true)
+    
 
     return(
         <div>
-        <br/>
-            {/* <Accordion items={ items }/> */}
-            {/* <Search/> */}
+            <button className="ui button" onClick={()=> setShowDropDown(!showDropDown)}>Click me</button>
+        { showDropDown ?
             <DropDown 
             options = { options }
             selected = {selected}
             onSelectedChange={setSelected}
-            />
+            />: null
+        }
         </div>
-        )  
+    )  
     
 }
 
