@@ -1,31 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const DropDown = ({ options, selected, onSelectedChange  }) => {
 
- const [ active, setActive ] = useState(false)
- const ref = useRef()
+const DropDown = (props) => {
+    
+    const [ active, setActive ] = useState(false)
+    const ref = useRef()
+
  
 
-useEffect(() => {
-    console.log(active)
-    const onBodyClick = (e) => {
-        if (ref.current.contains(e.target)){
-            return
+    useEffect(() => {
+        console.log(active)
+        const onBodyClick = (e) => {
+            if (ref.current.contains(e.target)){
+                return
+            }
+            setActive(false)
         }
-        setActive(false)
-    }
-    
-    document.body.addEventListener("click", onBodyClick, { capture: true })
-    
-    return () => {
-        document.body.removeEventListener("click", onBodyClick, { 
-            capture: true 
-        })
-    }   
 
-}, [])
+        document.body.addEventListener("click", onBodyClick, { capture: true })
 
-    const renderingOptions = options.map((x)=> {
+        return () => {
+            document.body.removeEventListener("click", onBodyClick, { 
+                capture: true 
+            })
+        }   
+
+    }, [])
+
+    const renderingOptions = props.options.map((x)=> {
         // if (x.value === selected.value){
         //     return null
         // }
@@ -33,7 +35,7 @@ useEffect(() => {
             <div 
                 key={x.id} 
                 className="item"
-                onClick={()=> onSelectedChange(x)}
+                onClick={()=> props.onChangeSelected(x)}
             >
                 {x.label}
             </div>
@@ -51,7 +53,7 @@ useEffect(() => {
                 className={`ui selection dropdown ${ active ? 'visible active' : ''}`}
             >
                 <i className="dropdown icon"></i>
-                <div className="text">{selected.label}</div>
+                <div className="text">{props.selected.label}</div>
                 <div className={`menu ${active ? 'visible transition' : ''}`}>
                     {renderingOptions}
                 </div>
@@ -59,7 +61,7 @@ useEffect(() => {
             </div>
         </div>
         <div>
-            <h1 style={{color:`${selected.value}`}}>
+            <h1 style={{color:`${props.selected.value}`}}>
                     this is the color
             </h1>
             
