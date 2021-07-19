@@ -1,9 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react'
 
+const options = [
+    {
+        label: 'English',
+        value: 'En',
+        id:'001'
+    },
+    {
+        label: 'Spanish',
+        value: 'es',
+        id:'002'
+    },
+    {
+        label: ' French',
+        value: 'fr',
+        id:'003'
+    }
+]
 
-const DropDown = ({ options, selected, onChangeSelected, test }) => {
+const DropDownT = ({ term }) => {
     
     const [ active, setActive ] = useState(false)
+    const [selected, setSelected] = useState(options[0])
     const ref = useRef()
 
  
@@ -27,15 +45,18 @@ const DropDown = ({ options, selected, onChangeSelected, test }) => {
 
     }, [])
 
+    
+    const translationProcess = (x) => {
+        setSelected(x)
+        console.log('Target Language: ' + selected.label )
+    }
+    
     const renderingOptions = options.map((x)=> {
-        // if (x.value === selected.value){
-        //     return null
-        // }
         return (
             <div 
                 key={x.id} 
                 className="item"
-                onClick={()=> onChangeSelected(x)}
+                onClick={()=> { translationProcess(x) }}
             >
                 {x.label}
             </div>
@@ -62,13 +83,17 @@ const DropDown = ({ options, selected, onChangeSelected, test }) => {
             </div>
         </div>
         <div>
-            <h1 style={{color:`${selected.value}`}}>
-                    this is the color
+            <h1>
+                    { selected.label }
             </h1>
+            <h1>
+                { term }
+            </h1>
+            
+            
         </div>
     </div>
     ) 
 }
 
-export default DropDown
-
+export default DropDownT
