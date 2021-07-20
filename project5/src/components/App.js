@@ -1,25 +1,33 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import Translate from './translate'
 // import Accordion from './accordion'
 // import Search from './search'
-import DropDownT from '../components/dropDownT'
+//import DropDown from './dropdown'
 
-// Search Widget Options
-//  const items = [
-//     {
-//         title: 'Question 1',
-//         content: 'Answer 1 '
-//     },
-//     {
-//         title: 'Question 2',
-//         content: 'Answer 2'
-//     },
-//     {
-//         title: 'Question 3',
-//         content: 'Answer 3'
-//     }
-// ]
     
+
+
+
+const App = () =>  {
+    
+    return(
+        <div>
+           <Translate/>
+
+        </div>
+    )  
+    
+}
+
+export default App
+
+
+
+
+
+
+//******************************** */ DropDown Widget
+
 //DropDown Widget Options
 // const options = [
 //     {
@@ -39,26 +47,6 @@ import DropDownT from '../components/dropDownT'
 //     }
 // ]
 
-
-const App = () =>  {
-    
-    return(
-        <div>
-           
-            
-        </div>
-    )  
-    
-}
-
-export default App
-
-
-
-
-
-
-//******************************** */ DropDown Widget
 //     const [selected, setSelected] = useState(options[0])
 
 {/* <button className="ui button" onClick={()=> setShowDropDown(!showDropDown)}>Click me</button>
@@ -82,3 +70,20 @@ export default App
 <DropDownT
 term={ term } 
 /> */}
+
+
+// Search Widget Options
+//  const items = [
+//     {
+//         title: 'Question 1',
+//         content: 'Answer 1 '
+//     },
+//     {
+//         title: 'Question 2',
+//         content: 'Answer 2'
+//     },
+//     {
+//         title: 'Question 3',
+//         content: 'Answer 3'
+//     }
+// ]

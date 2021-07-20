@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 
-const DropDown = ({ options, selected, onChangeSelected, test }) => {
+const DropDown = ({ options, selected, onChangeSelected, label }) => {
     
     const [ active, setActive ] = useState(false)
     const ref = useRef()
@@ -28,9 +28,7 @@ const DropDown = ({ options, selected, onChangeSelected, test }) => {
     }, [])
 
     const renderingOptions = options.map((x)=> {
-        // if (x.value === selected.value){
-        //     return null
-        // }
+       
         return (
             <div 
                 key={x.id} 
@@ -47,7 +45,7 @@ const DropDown = ({ options, selected, onChangeSelected, test }) => {
     return(
     <div ref={ref} className="ui form">
         <div className="field">
-            <label className="label">Select the Color </label>
+            <label className="label">{label} </label>
             
             <div 
                 onClick={()=> setActive(!active)} 
@@ -62,9 +60,9 @@ const DropDown = ({ options, selected, onChangeSelected, test }) => {
             </div>
         </div>
         <div>
-            <h1 style={{color:`${selected.value}`}}>
+            {/* <h1 style={{color:`${selected.value}`}}>
                     this is the color
-            </h1>
+            </h1> */}
         </div>
     </div>
     ) 
