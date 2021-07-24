@@ -5,8 +5,8 @@ const Header = () => {
     return(
         <div className="ui secondary pointing menu">
             <Link className="item" href="/">Accordion</Link>
-            <Link className="item" href="/dropdown">Search on Wiki</Link>
-            <Link className="item" href="/search">DropDown Color List</Link>
+            <Link className="item" href="/search">Search on Wiki</Link>
+            <Link className="item" href="/dropdown">DropDown Color List</Link>
             <Link className="item" href="/translate">Translate</Link>
         </div>
     ) 

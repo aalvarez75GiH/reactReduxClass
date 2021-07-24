@@ -16,8 +16,8 @@ const Route = ({ path, children }) => {
         }
        
     }, [])
-    //console.log('test')
-    return window.location.pathname === path ? children : null
+    console.log('test')
+    return currentPath === path ? children : null
 }
 
 export default Route
