@@ -42,7 +42,7 @@ const Translate = ({ onSearch }) => {
                     onChange={(e)=> {
                         setTerm(e.target.value)
                         console.log(e.target.value)
-                    } }
+                    }}
                     />
                 </div>
                 
