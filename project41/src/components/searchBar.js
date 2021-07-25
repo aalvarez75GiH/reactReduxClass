@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
-const SearchBar = ( {onSearch }) => {
+const SearchBar = ({ onSearch }) => {
     const [ term, setTerm ] = useState('') 
     
-
 
     const onFormSubmit = e => {
         e.preventDefault()
@@ -19,7 +18,7 @@ const SearchBar = ( {onSearch }) => {
                 //onFormSubmit(e) }
                 >
                     <div className="field">
-                        <label> Video Search </label>
+                        <label> Video Search - Powered by YouTube </label>
                         <input 
                         onChange={(e) => setTerm(e.target.value)} 
                         type="text"
