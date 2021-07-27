@@ -1,0 +1,21 @@
+.songContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.slContainer {
+    width: 400px;
+    height: 200px;
+    /* background-color: blueviolet; */
+}
+.sdContainer {
+    width: 300px;
+    height: 200px;
+    /* background-color: yellowgreen; */
+}
+.songList ul {
+    list-style: none;
+}
+.songDetail {
+    padding: 20px;
+}

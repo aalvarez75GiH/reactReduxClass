@@ -27,7 +27,7 @@ const App = () => {
                    <div className="five wide column">
                        <VideoList 
                        data={data} 
-                       onVideoSelect = {(video)=> setSelectedVideo(video) }
+                       onVideoSelect = {(video)=> setSelectedVideo(video)}
                         />    
                    </div>
                </div>
