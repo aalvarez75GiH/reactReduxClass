@@ -5,8 +5,13 @@ import { createStore } from 'redux'
 
 
 import App from './components/App'
-import reducers from './reducers'
+import reducers from './reducers' //here, we are invoking the combined Reducers
 
 
 const container = document.getElementById('root')
-ReactDOM.render(<App/>,container)
+const store = createStore(reducers)
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    container)

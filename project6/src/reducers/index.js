@@ -2,34 +2,40 @@ import { combineReducers } from "redux"
 
 
 const songsReducer = () => {
-    return [
+    return[
             {
                 title: 'Comfortably Numb',
                 artist: 'Pink floyd',
                 length:'8:00 min',
-                id:'001'
+                id:'001',
+                favorite:''
             },
             {
                 title: 'Exit Music',
                 artist: 'Radiohead',
                 length:'5:30 min',
-                id:'002'
+                id:'002',
+                favorite:''
             },
             {
                 title: 'Basket Case',
                 artist: 'GreenDay',
                 length:'3:46 min',
-                id:'003'
+                id:'003',
+                favorite:''
             },
             {
                 title: 'hey jude',
                 artist: 'The Beatles',
                 length:'5:34 min',
-                id:'004'
-            }
+                id:'004',
+                favorite:'this one'
+            } 
         ]
-    
+        
 }
+
+
 
 const selectedSongReducer = (selectedSong = null, action ) => {
     if (action.type === 'SONG_SELECTED'){

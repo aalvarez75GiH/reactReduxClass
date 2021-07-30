@@ -1,34 +1,44 @@
 import React from 'react'
-import '../global.css'
+import { connect } from 'react-redux'
+import { selectSong } from '../actions'
 
-const SongList = ({ list, onSongSelect }) => {
 
-    // const song = list.map((song) => {
-    //     return (
-    //         <div className="ui middle aligned divided list">
-    //             <div className="item">
-    //                 <div className="right floated content">
-    //                   <div className="ui button" onClick={() => onSongSelect(song)}>Add</div>
-    //                 </div>
-    //                 <div className="content" key={song.id}>
-    //                     {song.title}
-    //                 </div>
-    //               </div>
-    //         </div>
-            
-    //     )
-
-    // })
-
-    return (
-        <div>
-            SonList
-            {/* {song} */}
-        </div>
-         
-        
-    )
+class SongList extends React.Component {
+    
+    renderingList() {
+        return this.props.songs.map((song)=> {
+            return (
+                <div className="item" key={song.id}>
+                    <div className="right floated content">
+                        <button 
+                        className="ui button primary"
+                        onClick={()=> this.props.selectSong(song)}
+                        >
+                            Select
+                        </button>
+                    </div>
+                    <div className="content">{song.title}</div>
+                </div>
+            ) 
+        })
+    }
+    
+    render(){
+        return(
+            <div className="ui divided list">
+                {this.renderingList()}
+            </div>
+        )
+    }
 }
 
-export default SongList
+
+const mapStateToProp = (state) => {
+    console.log(state)
+    return {
+        songs: state.songs, 
+    }
+}
+
+export default connect(mapStateToProp, { selectSong })(SongList)
 
