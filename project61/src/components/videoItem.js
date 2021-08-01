@@ -1,9 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const VideoItem = () => {
+const VideoItem = (props) => {
     return(
-        <h1>I am VideoItem...</h1>
+        <h1>{props.term}</h1>
     )
 }
 
-export default VideoItem
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        term: state.term
+    }
+}
+export default connect(mapStateToProps)(VideoItem)

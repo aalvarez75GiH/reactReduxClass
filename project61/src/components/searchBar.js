@@ -1,33 +1,34 @@
-
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-const SearchBar = () => {
+import termSelected from '../actions' 
+
+const SearchBar = (props) => {
    
-    const [term, setTerm] = useState('')
+    const [text, setText] = useState('')
     
     const onInputChange = (e) => {
-        setTerm(e.target.value)
-        console.log(term)
+        setText(e.target.value)
+        console.log(text)
     }
 
-    // onFormSubmit = e => {
-    //     e.preventDefault()
-    //     this.props.onSearch(this.state.term)
-    // }
+    const onFormSubmit = e => {
+        e.preventDefault()
+        props.termSelected(text)
+    }
         return (
             <div className="search-bar ui segment">
                 <form 
                 className="ui form" 
                 action=""
-                // onSubmit={(e) => this.onFormSubmit(e) }
+                onSubmit={(e) => onFormSubmit(e) }
                 >
                     <div className="field">
                         <label> Video Search </label>
                         <input 
                         onChange={ (e) => onInputChange(e) } 
                         type="text"
-                        value={ term }
+                        value={ text }
                         />
                         <i className="search icon"></i>
                     </div>
@@ -40,9 +41,10 @@ const SearchBar = () => {
 
 const mapStateToProps = (state) => {
     console.log(state)
-    return{
+    return {
         term: state.term
     }
 }
 
-export default connect(mapStateToProps)(SearchBar)
+
+export default connect(mapStateToProps, { termSelected })(SearchBar)
