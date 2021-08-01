@@ -29,7 +29,6 @@ class SongList extends React.Component {
     }
     
     render(){
-       
         return(
             <div className="ui divided list">
                 {this.renderingList()}
