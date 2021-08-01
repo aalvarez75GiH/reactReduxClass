@@ -35,7 +35,13 @@ const songsReducer = () => {
         
 }
 
-
+// const defaultSelectedSong = {
+//     title: 'Imagine',
+//     artist: 'Jhon Lenon',
+//     length:'5:34 min',
+//     id:'005',
+//     favorite:''
+// }
 
 const selectedSongReducer = (selectedSong = null, action ) => {
     if (action.type === 'SONG_SELECTED'){

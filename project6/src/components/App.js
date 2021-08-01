@@ -1,5 +1,7 @@
 import React  from 'react'
 import SongList from './songList'
+import SongDetails from './songDetails'
+
 
 const App = () => {
     
@@ -7,7 +9,11 @@ const App = () => {
         <div className="ui container grid">
             <div className="ui row">
                 <div className="column eight wide">
-                    <SongList /> 
+                    <SongList />
+                    
+                </div>
+                <div className="column eight wide">
+                    <SongDetails/>
                 </div>
             </div>    
         </div>
