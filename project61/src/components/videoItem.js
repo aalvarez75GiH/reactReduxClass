@@ -3,19 +3,18 @@ import { connect } from 'react-redux'
 
 import './styles/videoItem.css'
 import { videoSelecting } from '../actions'
-import store from './store'
 
-const VideoItem = (props) => {
+
+const VideoItem = ({ video, videoSelecting }) => {
     return(
         <div className="video-item item"
-        onClick={() => props.videoSelecting(props.video) }
-        //onClick={store.dispatch(videoSelecting(video))}
+        onClick={() => videoSelecting(video) }
         >
         <img className="ui image" 
-            src={props.video.snippet.thumbnails.medium.url} 
-            alt={props.video.snippet.title}/>
+            src={video.snippet.thumbnails.medium.url} 
+            alt={video.snippet.title}/>
         <div className="content">
-            <div className="header test">{props.video.snippet.title}</div>
+            <div className="header test">{video.snippet.title}</div>
         </div>
             
         </div>

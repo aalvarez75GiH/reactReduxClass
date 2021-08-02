@@ -1,7 +1,8 @@
 import React from 'react'
 import SearchBar from './searchBar'
 import VideoList from './videoList'
-import VideoItem from './videoItem'
+import VideoPlayer from './videoPlayer'
+
 
 const App = () => {
     return (
@@ -10,8 +11,7 @@ const App = () => {
             <div className="ui grid">
                 <div className="ui row">
                     <div className="eleven wide column">
-                        {/* <VideoItem video={ this.state.selectedVideo }/> */}
-                        {/* <VideoDetail video={ this.state.selectedVideo }/> */}
+                     <VideoPlayer/>
                     </div>
                     <div className="five wide column">
                         <VideoList/>    
