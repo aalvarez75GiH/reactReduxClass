@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import termSelected from '../actions' 
+import  { termSelected }  from '../actions' 
 
 const SearchBar = (props) => {
    

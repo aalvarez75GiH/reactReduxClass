@@ -1,4 +1,4 @@
-const selectVideo = (term = 'nirvana', action) => {
+export const selectVideo = (term = 'nirvana', action) => {
     if (action.type === 'ENTERING_TERM'){
         //return action.payload
         return {
@@ -8,5 +8,3 @@ const selectVideo = (term = 'nirvana', action) => {
     }
     return term
 }
-
-export default selectVideo

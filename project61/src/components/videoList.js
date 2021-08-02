@@ -14,10 +14,11 @@ const VideoList = (props) => {
                 params: { q: props.term }
             })
         setData(response.data.items)
+        console.log(data)
         console.log(response.data.items)
     }
     searchOnWiki()
-    },[props.term])
+    },[ props.term ])
         
     return(
         <h1>{props.term}</h1>

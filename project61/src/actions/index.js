@@ -1,4 +1,4 @@
-const termSelected = (term) => {
+export const termSelected = (term) => {
     //returning the action
     return{
         type: 'ENTERING_TERM',
@@ -6,4 +6,3 @@ const termSelected = (term) => {
     }
 }
 
-export default termSelected
