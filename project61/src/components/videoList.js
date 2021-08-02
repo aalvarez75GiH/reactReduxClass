@@ -13,10 +13,7 @@ const VideoList = (props) => {
             const response = await youTube.get('/search', {
                 params: { q: props.term }
             })
-            store.dispatch(videosFetching(response.data.items))
-            
-            //setData(response.data.items)
-            //console.log(data)    
+            store.dispatch(videosFetching(response.data.items))   
     }
     searchOnYouTube()
 
