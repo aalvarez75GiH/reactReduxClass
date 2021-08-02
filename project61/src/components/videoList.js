@@ -25,11 +25,7 @@ const VideoList = (props) => {
     const renderVideos = props.videos.map((video) => {
         return(
             <VideoItem key={video.id.videoId} video = { video } />
-            //<div>{video.id.videoId}</div>    
         )
-        
-        // return <div>{video.id}</div>
-        //return <VideoItem key={video.id.videoId} video = { video } />
     }) 
     
     return(
@@ -48,18 +44,3 @@ const mapStateToProps = (state) => {
 }
 export default connect(mapStateToProps,  {videosFetching})(VideoList)
 
-{/* <div className="item">
-                <div className="right floated content">
-                <button 
-                    className="ui button primary"
-                    // onClick={()=> this.props.selectSong(song)}
-                    // onClick={() => store.dispatch({
-                    //     type: 'SONG_SELECTED',
-                    //     payload: song    
-                    // })} my dispatch
-                >
-                    Select
-                </button>
-                </div>
-            <div className="content">{video}</div>
-        </div> */}

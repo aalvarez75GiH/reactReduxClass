@@ -13,29 +13,26 @@ const reducingTerm = (term = 'nirvana', action) => {
 
 const reducingVideoData = (videos = [], action) => {
     if (action.type === 'FETCHING_VIDEOS'){
-        return action.payload
-        
-        
+        return action.payload  
     }
     
     return videos
 
 }
 
-// const reducingVideoData = (videos = [], action) => {
-//     if (action.type === 'FETCHING_VIDEOS'){
-//      return {
-//             videos: action.payload
-//         }
-//     }
-    
-//     return videos
+const reducingSelection = (selectedVideo = null, action ) => {
+    if (action.type === 'SELECTING_VIDEO'){
+        return action.payload
+    }
+    return selectedVideo
+}
 
-// }
+
 
 export default combineReducers(
     {
     term: reducingTerm,
-    videos: reducingVideoData
+    videos: reducingVideoData,
+    videoSelected: reducingSelection
     }
 )
