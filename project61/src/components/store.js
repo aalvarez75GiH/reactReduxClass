@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import { selectVideo } from "../reducers";
+import reducers from "../reducers";
 
-const store = createStore(selectVideo)
+const store = createStore(reducers)
 
 export default store

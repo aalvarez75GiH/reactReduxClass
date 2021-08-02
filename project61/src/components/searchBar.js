@@ -40,9 +40,10 @@ const SearchBar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return {
-        term: state.term
+        term: state.term,
+        videos: state.videos
     }
 }
 

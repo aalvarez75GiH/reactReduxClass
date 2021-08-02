@@ -1,34 +1,65 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import youTube from '../api/youtube'
+import { videosFetching } from '../actions'
+import store from './store'
+import VideoItem from './videoItem'
 
 const VideoList = (props) => {
 
-    const [data, setData] = useState([])
-
-    //********************************************************* */
     useEffect(()=> {
-        const searchOnWiki = async () => {
+        const searchOnYouTube = async () => {
             const response = await youTube.get('/search', {
                 params: { q: props.term }
             })
-        setData(response.data.items)
-        console.log(data)
-        console.log(response.data.items)
+            store.dispatch(videosFetching(response.data.items))
+            
+            //setData(response.data.items)
+            //console.log(data)    
     }
-    searchOnWiki()
+    searchOnYouTube()
+
     },[ props.term ])
+
+    const renderVideos = props.videos.map((video) => {
+        return(
+            <VideoItem key={video.id.videoId} video = { video } />
+            //<div>{video.id.videoId}</div>    
+        )
         
+        // return <div>{video.id}</div>
+        //return <VideoItem key={video.id.videoId} video = { video } />
+    }) 
+    
     return(
-        <h1>{props.term}</h1>
+       <div className="ui relaxed divided list">
+           { renderVideos }
+       </div>
     )
 }
 
 const mapStateToProps = (state) => {
     console.log(state)
     return {
-        term: state.term
-    }
+        term: state.term,
+        videos: state.videos
 }
-export default connect(mapStateToProps)(VideoList)
+}
+export default connect(mapStateToProps,  {videosFetching})(VideoList)
+
+{/* <div className="item">
+                <div className="right floated content">
+                <button 
+                    className="ui button primary"
+                    // onClick={()=> this.props.selectSong(song)}
+                    // onClick={() => store.dispatch({
+                    //     type: 'SONG_SELECTED',
+                    //     payload: song    
+                    // })} my dispatch
+                >
+                    Select
+                </button>
+                </div>
+            <div className="content">{video}</div>
+        </div> */}
