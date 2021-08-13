@@ -16,7 +16,10 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
 //this is a middleware action creator very refactored
 export const fetchPosts = () =>  async dispatch => {
         const response = await jsonPlaceholder.get('/posts')
-        dispatch({ type: 'FETCH_POSTS', payload: response.data })
+        dispatch({ 
+            type: 'FETCH_POSTS', 
+            payload: response.data 
+        })
 }
 
 // *********** FetchUser No refactored/Not memoized *************************
@@ -32,7 +35,7 @@ export const fetchUser = (id) => {
 
 
 
-// ****************** Refactored version of fetchUser *********************
+// ****************** FetchUser refactored/ Memoized *********************
 // export const fetchUser = (id) => dispatch => _fetchUser(id, dispatch)
 // const _fetchUser = _.memoize(async (id, dispatch) => {
 //     const response = await jsonPlaceholder.get(`/users/${id}`)
