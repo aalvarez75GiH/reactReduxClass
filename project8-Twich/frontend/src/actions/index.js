@@ -12,10 +12,10 @@ import {
 
 
 
-export const signIn = (googleUserId) => {
+export const signIn = (userId) => {
     return {
         type: SIGN_IN,
-        payload: googleUserId
+        payload: userId
     }
 }
 
@@ -25,8 +25,10 @@ export const signOut = () => {
     }
 }
 
-export const createStream = formValues => async dispatch => {
-        const response = streams.post('/streams', formValues)
+export const createStream = formValues => async (dispatch, getState) => {
+        const { userId } = getState().auth
+        console.log(userId)
+        const response = await streams.post('/streams', {...formValues, userId})
         dispatch({
             type: CREATE_STREAM,
             payload: response.data

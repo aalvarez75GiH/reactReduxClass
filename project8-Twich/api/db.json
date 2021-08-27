@@ -6,9 +6,28 @@
       "id": 1
     },
     {
-      "description": "another nice stream",
-      "title": "Other Stream",
+      "title": "my Stream",
+      "description": "this is mine mine",
+      "userId": "118242060443276451211",
       "id": 2
+    },
+    {
+      "title": "my 2nd Stream",
+      "description": "this mine too jajajaj",
+      "userId": "118242060443276451211",
+      "id": 3
+    },
+    {
+      "title": "somebody else Stream",
+      "description": "this is Kris Stream",
+      "userId": null,
+      "id": 4
+    },
+    {
+      "title": "my 5th Stream",
+      "description": "the 5th is the victory",
+      "userId": null,
+      "id": 5
     }
   ]
 }
