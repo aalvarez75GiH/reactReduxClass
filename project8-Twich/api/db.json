@@ -6,20 +6,19 @@
       "id": 1
     },
     {
-      "title": "my Stream",
-      "description": "this is mine mine",
-      "userId": "118242060443276451211",
+      "title": "My 1st Stream ",
+      "description": "my 1st stream but 2nd in overall ",
       "id": 2
     },
     {
-      "title": "my 2nd Stream",
-      "description": "this mine too jajajaj",
+      "title": "2nd Stream",
+      "description": "Mine",
       "userId": "118242060443276451211",
       "id": 3
     },
     {
-      "title": "Refactoring Creation",
-      "description": "This is a very nice Stream about refactoring",
+      "title": "3rd Stream",
+      "description": "Mine",
       "userId": "118242060443276451211",
       "id": 4
     }
