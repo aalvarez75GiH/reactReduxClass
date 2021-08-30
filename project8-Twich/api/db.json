@@ -11,16 +11,22 @@
       "id": 2
     },
     {
-      "title": "2nd Stream",
-      "description": "Mine",
+      "title": "1st Stream",
+      "description": "Test 1",
       "userId": "118242060443276451211",
-      "id": 3
+      "id": 4
+    },
+    {
+      "title": "2nd Stream",
+      "description": "test 2",
+      "userId": "118242060443276451211",
+      "id": 5
     },
     {
       "title": "3rd Stream",
-      "description": "Mine",
+      "description": "test 3",
       "userId": "118242060443276451211",
-      "id": 4
+      "id": 6
     }
   ]
 }

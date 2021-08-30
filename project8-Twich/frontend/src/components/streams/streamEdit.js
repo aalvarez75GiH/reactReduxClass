@@ -21,7 +21,6 @@ class StreamEdit extends React.Component {
         return(
             <div>
                 <h3>Edit a Stream</h3>
-                <h3>{this.props.stream.id}</h3>
                 <StreamForm
                 // initialValues= {{
                 //     title: this.props.stream.title,
@@ -38,7 +37,7 @@ class StreamEdit extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // console.log(ownProps)
+      console.log(ownProps)
     return {
         stream: state.streams[ownProps.match.params.id] 
     }
