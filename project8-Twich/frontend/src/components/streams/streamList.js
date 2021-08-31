@@ -46,15 +46,25 @@ class StreamList extends React.Component {
     renderStreams() {
         return this.props.streams.map((stream)=> {
             return (
-              
-                <div className="item" key={stream.id}>
+                <div  className="item" key={stream.id}>
                     {this.renderEditDeleteButtons(stream)}
                     <i className="large middle aligned icon camera" />
                     <div className="content">
+                        <Link to={`/streams/${stream.id}`} className="header">
                             {stream.title}
-                        <div className="description">{stream.description}</div>
+                        </Link>
+                    <div className="description">{stream.description}</div>
                     </div>
-                </div>               
+                </div>
+
+                // <div className="item" key={stream.id}>
+                //     {this.renderEditDeleteButtons(stream)}
+                //     <i className="large middle aligned icon camera" />
+                //     <div className="content">
+                //             {stream.title}
+                //         <div className="description">{stream.description}</div>
+                //     </div>
+                // </div>               
               
             )
         })
