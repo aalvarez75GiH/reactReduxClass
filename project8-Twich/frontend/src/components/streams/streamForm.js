@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react";
 import { Field, reduxForm } from 'redux-form'
-
 
 class StreamForm extends React.Component {
 
@@ -16,8 +15,6 @@ class StreamForm extends React.Component {
  
     renderInput = ({ input, label, meta }) => {
        
-        // console.log(meta)
-        // console.log(input)
         const className = `field ${meta.error && meta.touched ? 'error' : ''}`
         return (
             <div className={ className }>
@@ -51,14 +48,14 @@ class StreamForm extends React.Component {
 
 const validate = (formValues) => {
     const errors = {}
-    // console.log(formValues)
+   
     if (!formValues.title){
         errors.title = 'You must Enter a valid Title'
     }
     if (!formValues.description){
         errors.description = 'You must Enter a valid Description'
     }
-    // console.log(errors)
+   
     return errors
 }
 

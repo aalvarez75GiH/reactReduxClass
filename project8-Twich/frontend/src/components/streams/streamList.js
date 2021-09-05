@@ -42,9 +42,11 @@ class StreamList extends React.Component {
             )
         }
     }
+  
 
     renderStreams() {
-        return this.props.streams.map((stream)=> {
+            console.log(test)
+            return test.map((stream)=> {
             return (
                 <div  className="item" key={stream.id}>
                     {this.renderEditDeleteButtons(stream)}
